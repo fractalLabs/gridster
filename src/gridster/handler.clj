@@ -6,7 +6,7 @@
             [compojure.route :as route]))
 
 (defroutes app-routes
-  (GET "/" [] (html le-hiccup2))
+  (GET "/" [] (html (gridster)))
   (route/resources "/")
   (route/not-found "Not Found"))
 

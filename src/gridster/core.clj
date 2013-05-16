@@ -19,9 +19,16 @@
         min_cols: 3
     }).data('gridster');});" ])
 
-(def le-mini-main-div  [:div {:class "gridster ready" :id "grid"} [:ul {:style "height: 480px; position: relative;"} ]])
+;le quito esto a gridster para que no este chingando, nadamas hay q hacer un div class=gridster
+(def le-mini-main-div  [:div {:class "gridster" :id "grid"} [:ul {:style "height: 480px; position: relative;"} ]])
 
-(def le-hiccup2 (html css-includes
-                      le-mini-main-div
-                      js-includes
-                      le-js))
+(def le-micro-div [:div#gridster.gridster [:ul]])
+
+(defn gridster 
+  ([] (html css-includes
+            js-includes
+	    le-micro-div
+            le-js))
+  ([coll] (html css-includes js-includes le-js
+  	  	[:div#gridster.gridster (vec (conj (map #(str "<li data-row='1' data-col='1' data-sizex='1' data-sizey='1'>" % "</li>") coll) "ul"))])))
+
