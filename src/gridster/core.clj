@@ -9,13 +9,13 @@
 (def js-includes (include-js "http://static.fractalmedia.mx/gridster/jquery-1.7.2.min.js"
                              "http://static.fractalmedia.mx/gridster/jquery.gridster.js"))
 ;TODO parametrizar tamanios
-;original: margins 10 10, base dimensions 140 140 chidas 420 420 8 8
+;original: margins 10 10, base dimensions 140 140 chidas 420 420 8 8. previo 288 288
 (def le-js [:script {:type "text/javascript"}
 "var gridster;
   $(function(){
     gridster = $(\".gridster > ul\").gridster({
         widget_margins: [8, 8],
-        widget_base_dimensions: [288, 288],
+        widget_base_dimensions: [500, 500],
         min_cols: 3
     }).data('gridster');});" ])
 
