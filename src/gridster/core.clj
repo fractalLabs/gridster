@@ -24,5 +24,5 @@
 (def le-hiccup2 (html [:html css-includes
                        [:body {}
                         le-mini-main-div
-                        include-js
+                        js-includes
                         le-js]]))
