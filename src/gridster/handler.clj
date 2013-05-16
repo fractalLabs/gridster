@@ -1,5 +1,5 @@
 (ns gridster.handler
-  (:use [gridster core recycle-bin]
+  (:use [gridster core]
         compojure.core
         [hiccup core page element])
   (:require [compojure.handler :as handler]
@@ -7,7 +7,6 @@
 
 (defroutes app-routes
   (GET "/" [] (html le-hiccup2))
-  (GET "/lab" [] (html le-hiccup))
   (route/resources "/")
   (route/not-found "Not Found"))
 
