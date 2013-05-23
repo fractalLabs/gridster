@@ -1,13 +1,13 @@
 (ns gridster.core
   (:use [hiccup core page element]))
 
+;nota: jquery tiene que estar importado por fuera
 ;gridster.add_widget('<li class="new">The HTML of the widget...</li>', 1, 1);
 (def css-includes (include-css "http://static.fractalmedia.mx/gridster/jquery.gridster.min.css"
                          "http://static.fractalmedia.mx/gridster/style.css"
                          "http://fonts.googleapis.com/css?family=Rancho"))
 
-(def js-includes (include-js "http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"
-                             "http://static.fractalmedia.mx/gridster/jquery.gridster.js"))
+(def js-includes (include-js "http://static.fractalmedia.mx/gridster/jquery.gridster.js"))
 ;TODO parametrizar tamanios
 ;original: margins 10 10, base dimensions 140 140 chidas 420 420 8 8. previo 288 288
 (def le-js [:script {:type "text/javascript"}
